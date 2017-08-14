@@ -1,3 +1,17 @@
-import { message } from './lib/util.js'
-var helloMessage = document.createTextNode(message());
-document.body.appendChild(helloMessage);
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+          hello! React!
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('root')
+);

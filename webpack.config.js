@@ -15,7 +15,7 @@ module.exports = {
                 loader: 'babel-loader', // 使用するLoader
                 exclude: /node_modules/, // 除外ディレクトリ
                 query: {
-                    presets:['es2015']
+                    presets:['react','es2015']
                 }
             }
         ]
