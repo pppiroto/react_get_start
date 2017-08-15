@@ -18,3 +18,9 @@ https://reacttraining.com/react-router/
 https://www.npmjs.com/package/react-router-dom
 
 npm install --save react-router-dom
+
+!merge
+> git checkout master
+> git merge router
+
+
