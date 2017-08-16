@@ -37,3 +37,5 @@ Uncaught TypeError: Cannot read property 'route' of undefined
 https://stackoverflow.com/questions/43350683/react-router-uncaught-typeerror-cannot-read-property-route-of-undefined
 
 
+http://qiita.com/kuy/items/869aeb7b403ea7a8fd8a
+http://qiita.com/MegaBlackLabel/items/df868e734d199071b883#_reference-863a1e1485bf47f046e5

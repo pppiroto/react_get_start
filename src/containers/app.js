@@ -4,9 +4,22 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
 import { helloAction } from '../actions';
 
-const Home = () => (
-  <div><h2>Home</h2></div>
-)
+class Home extends Component {
+  handleMessage() {
+    this.props.dispatch(helloAction());
+  }
+  render () {
+    return (
+      <div>
+        <h2>Home</h2>
+        { this.props.hello }
+        <br />
+        <button onClick={ this.handleMessage.bind(this) } >Hello</button>
+      </div>
+    );
+  }
+}
+ 
 const About = () => (
   <div><h2>About</h2></div>
 )
@@ -15,9 +28,6 @@ const Topics = () => (
 )
 
 class App extends Component {
-  handleMessage() {
-    this.props.dispatch(helloAction());
-  }
   render() {
     return (
       <BrowserRouter>
@@ -28,10 +38,8 @@ class App extends Component {
             <li><Link to="/topics">Topics</Link></li>
           </ul>
           <hr />
-          <input type="text" value={ this.props.message } />
-          <button onClick={ this.handleMessage.bind(this) } >Hello</button>
-
-          <Route exact path="/" component={Home} />
+          {/* http://qiita.com/kuy/items/869aeb7b403ea7a8fd8a */}
+          <Route exact path="/" component={connect(state => state)(Home)} />
           <Route exact path="/about" component={About} />
           <Route exact path="/topics" component={Topics} />
         </div>
@@ -39,12 +47,14 @@ class App extends Component {
     );
   }
 }
+
+// http://qiita.com/MegaBlackLabel/items/df868e734d199071b883#_reference-863a1e1485bf47f046e5
 function mapStateToProps(state) {
   return {
-    message: state.hello
+    message:state.hello
   };
 }
 
 // https://stackoverflow.com/questions/43350683/react-router-uncaught-typeerror-cannot-read-property-route-of-undefined
-//export default withRouter(connect(mapStateToProps)(App))
-export default connect(mapStateToProps)(App)
+// export default withRouter(connect(mapStateToProps)(App))
+export default connect(state => state)(App)
