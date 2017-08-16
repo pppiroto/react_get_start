@@ -18,3 +18,12 @@ https://reacttraining.com/react-router/
 https://www.npmjs.com/package/react-router-dom
 
 npm install --save react-router-dom
+
+
+!Redux
+npm install --save redux react-redux redux-actions redux-logger redux-saga
+# Generator 用
+npm install --save babel-polyfill
+
+app.js -> ./container/app.js
+new entity.js
