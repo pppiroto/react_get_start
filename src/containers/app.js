@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
-
+import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom'
+import { helloAction } from '../actions';
 
 const Home = () => (
   <div><h2>Home</h2></div>
@@ -13,23 +15,36 @@ const Topics = () => (
 )
 
 class App extends Component {
+  handleMessage() {
+    this.props.dispatch(helloAction());
+  }
   render() {
     return (
-      <Router>
+      <BrowserRouter>
         <div>
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About</Link></li>
             <li><Link to="/topics">Topics</Link></li>
-            </ul>  
-            <hr/>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/topics" component={Topics} />
+          </ul>
+          <hr />
+          <input type="text" value={ this.props.message } />
+          <button onClick={ this.handleMessage.bind(this) } >Hello</button>
+
+          <Route exact path="/" component={Home} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/topics" component={Topics} />
         </div>
-      </Router>
+      </BrowserRouter>
     );
   }
 }
+function mapStateToProps(state) {
+  return {
+    message: state.hello
+  };
+}
 
-export default App;
+// https://stackoverflow.com/questions/43350683/react-router-uncaught-typeerror-cannot-read-property-route-of-undefined
+//export default withRouter(connect(mapStateToProps)(App))
+export default connect(mapStateToProps)(App)

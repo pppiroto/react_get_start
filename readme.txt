@@ -25,5 +25,15 @@ npm install --save redux react-redux redux-actions redux-logger redux-saga
 # Generator 用
 npm install --save babel-polyfill
 
-app.js -> ./container/app.js
-new entity.js
+https://reacttraining.com/react-router/web/guides/redux-integration
+// before
+export default connect(mapStateToProps)(Something)
+
+// after
+import { withRouter } from 'react-router-dom'
+export default withRouter(connect(mapStateToProps)(Something))
+
+Uncaught TypeError: Cannot read property 'route' of undefined
+https://stackoverflow.com/questions/43350683/react-router-uncaught-typeerror-cannot-read-property-route-of-undefined
+
+
