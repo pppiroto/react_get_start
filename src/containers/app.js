@@ -6,7 +6,7 @@ import { helloAction } from '../actions';
 
 class Home extends Component {
   handleMessage() {
-    this.props.dispatch(helloAction());
+    this.props.dispatch(helloAction('Yes'));
   }
   render () {
     return (
