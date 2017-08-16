@@ -1,6 +1,6 @@
 module.exports = {
     // ビルド起点ファイル
-    entry: './src/app.js',
+    entry: './src/entry.js',
     // 出力ファイルの設定
     output: {
         path: __dirname + '/dist',
