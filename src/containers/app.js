@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
-import { helloAction } from '../actions';
+import { helloAction, helloApiAction } from '../actions';
 
 class Home extends Component {
   handleMessage() {
     this.props.dispatch(helloAction('Yes'));
+  }
+  handleMessageApi(event) {
+    this.props.dispatch(helloApiAction({id:event.target.name}));
   }
   render () {
     return (
@@ -15,6 +18,10 @@ class Home extends Component {
         { this.props.hello }
         <br />
         <button onClick={ this.handleMessage.bind(this) } >Hello</button>
+        <br />
+        <button name="successurl" onClick={ this.handleMessageApi.bind(this) } >API(Sucess)</button>
+        <br />
+        <button name="failurl" onClick={ this.handleMessageApi.bind(this) } >API(Fail)</button>
       </div>
     );
   }
