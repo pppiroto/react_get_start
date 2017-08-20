@@ -49,3 +49,12 @@ http://qiita.com/MegaBlackLabel/items/df868e734d199071b883#_reference-863a1e1485
 !Super Agent
 https://redux-saga.js.org/docs/basics/UsingSagaHelpers.html
 npm install superagent
+
+!Bootstrap
+npm install --save react-bootstrap
+https://react-bootstrap.github.io/getting-started.html
+React-Bootstrap is a complete re-implementation of the Bootstrap components using React. It has no dependency on either bootstrap.js or jQuery. If you have React setup and React-Bootstrap installed you have everything you need.
+You can consume the library as CommonJS modules, ES6 modules via Babel, AMD, or as a global JS script.
+
+npm install --save bootstrap
+https://getbootstrap.com/
