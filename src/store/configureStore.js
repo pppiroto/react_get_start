@@ -4,7 +4,6 @@ import logger from 'redux-logger';
 import rootReducer from '../reducers';
 import rootSaga from '../sagas';
 
-// Store作成
 export default function configureStore(initialState) {
     const sagaMiddleware = createSagaMiddleware();
     const store = createStore(
