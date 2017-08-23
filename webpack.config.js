@@ -3,7 +3,7 @@ module.exports = {
     entry: './src/entry.js',
     // 出力ファイルの設定
     output: {
-        path: __dirname + '/dist',
+        path: __dirname + '/public/dist',
         filename: 'bundle.js'
     },
     // ソースマップをファイル内に出力させる場合、以下

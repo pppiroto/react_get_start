@@ -56,5 +56,5 @@ https://react-bootstrap.github.io/getting-started.html
 React-Bootstrap is a complete re-implementation of the Bootstrap components using React. It has no dependency on either bootstrap.js or jQuery. If you have React setup and React-Bootstrap installed you have everything you need.
 You can consume the library as CommonJS modules, ES6 modules via Babel, AMD, or as a global JS script.
 
-npm install --save bootstrap
+npm install --save-dev bootstrap@3
 https://getbootstrap.com/
